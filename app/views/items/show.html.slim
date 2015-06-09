@@ -1,0 +1,8 @@
+.row
+  .col-md-6
+    = image_tag @item.file.url
+  .col-md-6
+    .row
+      = @item.name
+    .row
+      = link_to "Download", download_items_path(id: @item.token, user_id: @item.user_id), class: 'btn btn-success', id: 'download_link'

@@ -6,22 +6,32 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
-group :development, :test do
-  gem 'byebug'
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
-end
-gem 'bootstrap-sass'
+gem 'jquery-turbolinks'
+gem 'nprogress-rails'
+gem 'zeroclipboard-rails'
+
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'high_voltage'
 gem 'mysql2'
 gem 'simple_form'
 gem 'slim-rails'
-gem 'therubyracer', :platform=>:ruby
+gem 'therubyracer', platform: :ruby
 gem 'thin'
+gem 'carrierwave'
+gem 'bcrypt'
+gem 'dropzonejs-rails'
+gem 'responders', '~> 2.0'
+
+gem 'sunspot_rails', '2.2.0'
+gem 'sunspot_solr', '2.2.0'
+gem 'progress_bar'
+gem 'kaminari'
+gem "sunspot_with_kaminari", '~> 0.2.0'
+
 group :development do
+  gem 'pry'
   gem 'better_errors'
-  gem 'binding_of_caller', :platforms=>[:mri_21]
+  gem 'binding_of_caller', platforms: [:mri_21]
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
