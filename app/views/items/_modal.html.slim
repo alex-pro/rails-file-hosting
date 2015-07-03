@@ -4,8 +4,9 @@
       .modal-header
         button.close aria-label="Close" data-dismiss="modal" type="button"
           span aria-hidden="true"  &times;
-        h4#myModalLabel.modal-title Modal title
+        h4#myModalLabel.modal-title Щоб розпочати, натисніть, або перенесіть файли, в середину вікна.
       .modal-body
-        = simple_form_for(@item, html: { class: 'dropzone', id: 'drop-zone' }) do |f|
+        = simple_form_for(@item, html: { class: 'dropzone text-center', id: 'drop-zone' }) do |f|
+          - f.input :folder_id, as: :hidden, input_html: { value: params[:id] }
       .modal-footer
-        button.btn.btn-default data-dismiss="modal" type="button"  Close
+        button.btn.btn-default data-dismiss="modal" type="button" Закрити

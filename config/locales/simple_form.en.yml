@@ -2,6 +2,11 @@ en:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
+    labels:
+      defaults:
+        password: 'Пароль'
+        password_confirmation: 'Підтвердження пароля'
+        email: 'Електронна адреса'
     required:
       text: 'required'
       mark: '*'
@@ -10,15 +15,16 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
+
     # Examples
     # labels:
     #   defaults:
-    #     password: 'Password'
+    #     password: 'Пароль'
     #   user:
     #     new:
-    #       email: 'E-mail to sign in.'
+    #       email: 'Електронна адреса'
     #     edit:
-    #       email: 'E-mail.'
+    #       email: 'Електронна адреса'
     # hints:
     #   defaults:
     #     username: 'User name to sign in.'

@@ -1,0 +1,6 @@
+/- if @user.errors.any?
+  - @user.errors.full_messages.each do |msg|
+    .alert.alert-danger
+      span.glyphicon.glyphicon-exclamation-sign
+      span.sr-only
+      = msg

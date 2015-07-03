@@ -1,6 +1,7 @@
 class Item < ActiveRecord::Base
   mount_uploader :file, FileUploader
   belongs_to :user
+  belongs_to :folder
 
   before_create :generate_token, :set_name
 

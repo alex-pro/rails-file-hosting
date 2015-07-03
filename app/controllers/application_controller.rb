@@ -25,5 +25,15 @@ class ApplicationController < ActionController::Base
   def current_user
     @current_user ||= User.find_by(id: session[:user_id])
   end
-  helper_method :current_user
+
+  def content_verification(file)
+    image_types = ["image/jpeg", "image/jpg", "image/png", "image/bmb"]
+    audio_types = ["audio/mp3", "audio/mid", "audio/wav", "audio/x-flac", "audio/aac", "audio/mpeg"]
+    video_types = ["application/mp4", "application/mkv", "application/3gp", "application/avi", "video/x-matroska", "video/x-msvideo", "video/quicktime"]
+    return 1 if image_types.include? file.content_type
+    return 2 if audio_types.include? file.content_type
+    return 3 if video_types.include? file.content_type
+    return 0
+  end
+  helper_method [:current_user, :content_verification]
 end

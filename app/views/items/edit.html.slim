@@ -1,0 +1,16 @@
+.container
+  .row
+    .col-sm-6
+      h2 = @item.name
+      - if content_verification(@item.file) == 1
+        = link_to i.file.url, title: "#{@item.name}", 'data-gallery' => ""
+          = image_tag i.file.url, alt: "#{@item.name}"
+      = audio_tag @item.file.url, controls: true if content_verification(@item.file) == 2
+      - if content_verification(@item.file) == 3
+        .embed-responsive.embed-responsive-16by9
+          iframe.embed-responsive-item src="#{@item.file.url}"
+      = image_tag "document-icon.png" if content_verification(@item.file) == 0
+    .col-sm-6
+      = simple_form_for(@item, html: { class: 'form-horizontal' }) do |f|
+        = f.input :name, placeholder: "#{@item.name}", class: 'form-control'
+        = f.button :submit, class: 'btn btn-primary'

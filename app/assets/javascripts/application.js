@@ -2,6 +2,9 @@
 //= require jquery.turbolinks
 //= require jquery_ujs
 //= require turbolinks
+//= require blueimp-gallery-all
+//= require mediaelement-and-player.min
+//= require magnific-popup
 //= require bootstrap-sprockets
 //= require jquery.collagePlus.min
 //= require jquery.collageCaption.min
@@ -41,10 +44,20 @@ $(window).load(function() {
       }, 2000);
     });
 
+    $('.gallery').each(function() { // the containers for all your galleries
+      $(this).magnificPopup({
+        delegate: 'a#gallery', // the selector for gallery item
+        type: 'image',
+        gallery: {
+          enabled:true
+        }
+      });
+    });
+
     Collage.init();
 
     $('#myModal').on('hidden.bs.modal', function () {
-      window.location = '/'
+      window.location.reload()
     });
 
     var client = new ZeroClipboard($('a.d_clip'));

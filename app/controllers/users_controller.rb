@@ -7,12 +7,11 @@ class UsersController < ApplicationController
   end
 
   def create
-    user = User.new(params_user)
-    if user.save
-      flash[:notice] = "User successfully created"
+    @user = User.new(params_user)
+    if @user.save
+      flash[:notice] = "Користувач успішно створений"
       redirect_to root_path
     else
-      flash[:error] = "Creating failed"
       render :new
     end
   end

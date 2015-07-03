@@ -1,7 +1,12 @@
 /*
  *= require transitions
+ *= require blueimp-gallery-all
+ *= require mediaelementplayer
+ *= require magnific-popup
+ *= require styles
  *= require nprogress
  *= require nprogress-bootstrap
+ *= require bootstrap-tokenfield
  *= require dropzone/dropzone
  *= require_tree .
  *= require_self
@@ -40,9 +45,17 @@ html.turbolinks-progress-bar::before {
   font-size:14px;
   font-weight:normal;
   font-family:arial;
+  top: -82px !important;
 }
 
 .Caption_Content {
   color:#FFF;
-  padding:20px;
+  padding-top: 20px;
+  padding-right: 7px;
+  padding-bottom: 20px;
+  padding-left: 7px;
+}
+
+div#pop-up {
+  display: none;
 }

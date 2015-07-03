@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     get :download, on: :collection
     get :download_my
   end
+  resources :folders
   root to: 'items#index'
 end

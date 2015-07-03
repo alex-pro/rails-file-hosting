@@ -1,4 +1,10 @@
-= simple_form_for(:sessions, url: sessions_path, html: { class: 'form-horizontal' }) do |f|
-  = f.input :email
-  = f.input :password
-  = f.button :submit, class: 'btn btn-primary'
+h1.text-center Вхід
+.row
+  .col-md-6.col-md-offset-3
+    = simple_form_for(:sessions, url: sessions_path, html: { class: 'form-horizontal' }) do |f|
+      = f.input :email
+      = f.input :password
+      = f.button :submit, 'Увійти', class: 'btn btn-primary'
+      h3
+        span Новий користувач?
+        = link_to " Зареєструйся зараз!", new_user_path
