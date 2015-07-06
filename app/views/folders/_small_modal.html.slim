@@ -1,0 +1,9 @@
+#mySmallModal.modal.fade aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      = form_tag nil, id: 'edit_folder_form', method: 'put' do
+        .modal-body
+          = text_field_tag :name
+        .modal-footer
+          = submit_tag "Змінити", class: "btn btn-primary"
+          button.btn.btn-default data-dismiss="modal" type="button" Закрити

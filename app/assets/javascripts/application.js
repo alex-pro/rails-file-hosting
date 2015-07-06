@@ -3,7 +3,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require blueimp-gallery-all
-//= require mediaelement-and-player.min
 //= require magnific-popup
 //= require bootstrap-sprockets
 //= require jquery.collagePlus.min
@@ -56,6 +55,15 @@ $(window).load(function() {
 
     Collage.init();
 
+    $('.edit-folder-name').on('click', function() {
+      var name = $(this).data('folder-name');
+      var id = $(this).data('folder-id');
+      var url = "/folders/" + id;
+
+      $('#edit_folder_form').attr('action', url);
+      $('#name').val(name);
+    });
+
     $('#myModal').on('hidden.bs.modal', function () {
       window.location.reload()
     });
@@ -65,5 +73,7 @@ $(window).load(function() {
       var url = $("#" + event.target.id).data('file-url');
       event.clipboardData.setData('text/plain', url);
     });
+
+
   });
 });

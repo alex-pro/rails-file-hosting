@@ -2,6 +2,9 @@
 section.Collage.effect-parent.gallery
   - @folders.each do |folder|
     .Image_Wrapper data-caption="<div class='text-center'>#{folder.name}<br>
+      <a href='#' data-target='#mySmallModal' data-toggle='modal' class='edit-folder-name btn btn-default btn-xs'
+      data-folder-name=#{folder.name} data-folder-id=#{folder.id}>
+      <span class='glyphicon glyphicon-pencil'></span></a>
       <a href='#{folder_path(folder.id)}' data-method='delete' class='btn btn-default btn-xs'><span class='glyphicon glyphicon-trash'></span></a>
       </div>"
       = link_to folder_path(folder.id)

@@ -3,4 +3,6 @@ class Folder < ActiveRecord::Base
   belongs_to :parent, class_name: "Folder"
   belongs_to :user
   has_many :items, dependent: :destroy
+
+  validates :name, presence: true
 end
