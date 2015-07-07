@@ -1,9 +1,8 @@
 FactoryGirl.define do
   factory :item do
-    user_id 1
-file "MyString"
-title "MyString"
-description "MyText"
+    user
+    name 'Image'
+    file { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec', 'fixtures', 'audio.png')) }
   end
 
 end
