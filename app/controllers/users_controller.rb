@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params_user)
-    if @user.save
+    user = User.new(params_user)
+    if user.save
       flash[:notice] = "Користувач успішно створений"
       redirect_to root_path
     else
@@ -17,6 +17,7 @@ class UsersController < ApplicationController
   end
 
   private
+
   def params_user
     params.require(:user).permit(:email, :password, :password_confirmation)
   end

@@ -1,6 +1,6 @@
 class FoldersController < ApplicationController
   def create
-    folder = current_user.folders.create(name: "Folder", parent_id: params[:parent_id])
+    current_user.folders.create(name: "Folder", parent_id: params[:parent_id])
     redirect_to :back
   end
 
