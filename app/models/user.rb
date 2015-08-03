@@ -8,4 +8,11 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 6 }
   has_many :folders, dependent: :destroy
   has_many :items, dependent: :destroy
+  has_one :profile, dependent: :destroy
+
+  after_create :build_profile
+
+  def build_profile
+    Profile.create(user: self, birthday: Time.now)
+  end
 end

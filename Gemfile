@@ -13,6 +13,7 @@ gem 'zeroclipboard-rails'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'high_voltage'
 gem 'mysql2'
+gem 'libv8'
 gem 'simple_form'
 gem 'slim-rails'
 gem 'therubyracer', platform: :ruby
@@ -26,6 +27,7 @@ gem 'blueimp-gallery'
 gem 'autoprefixer-rails'
 gem 'twitter-typeahead-rails'
 
+gem "cocoon"
 gem 'sunspot_rails'
 gem 'sunspot_solr'
 gem 'progress_bar'
@@ -47,7 +49,9 @@ group :development, :test do
   gem 'pry'
 end
 group :test do
+  gem 'simplecov'
   gem 'capybara'
+  gem 'nokogiri'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
   gem 'launchy'

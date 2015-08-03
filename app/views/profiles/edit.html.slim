@@ -1,0 +1,13 @@
+h1.text-center Профіль
+= render 'form'
+/.row
+  = simple_form_for(@profile, html: { class: 'form-horizontal' }) do |f|
+    .col-md-4
+      section.Collage.effect-parent.gallery
+        = link_to @profile.photo.url, id: "gallery"
+          = image_tag(@profile.photo.url, size: "300")
+      = f.file_field :photo
+    .col-md-6
+      = f.input :name
+      = f.input :birthday, as: :string, input_html: { class: 'datepicker', value: @profile.birthday.strftime("%d/%m/%Y"), 'data-provide' => 'datepicker' }
+      = f.submit 'Оновити профіль', class: "btn btn-primary"

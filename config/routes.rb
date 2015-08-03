@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     get :download_my
   end
   resources :folders
+  resources :profiles
+  resources :addresses
   root to: 'items#index'
 end

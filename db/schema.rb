@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150702091553) do
+ActiveRecord::Schema.define(version: 20150730142000) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "profile_id",   limit: 4
+    t.string   "country",      limit: 255
+    t.string   "city",         limit: 255
+    t.string   "street",       limit: 255
+    t.string   "house_number", limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
 
   create_table "folders", force: :cascade do |t|
     t.text     "name",       limit: 65535
@@ -30,9 +40,20 @@ ActiveRecord::Schema.define(version: 20150702091553) do
     t.datetime "updated_at",             null: false
     t.string   "token",      limit: 255
     t.string   "name",       limit: 255
-    t.string   "icon",       limit: 255
     t.integer  "folder_id",  limit: 4
   end
+
+  create_table "profiles", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.string   "photo",      limit: 255
+    t.datetime "birthday"
+  end
+
+  add_index "profiles", ["name"], name: "index_profiles_on_name", using: :btree
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",           limit: 255

@@ -5,9 +5,11 @@
 //= require blueimp-gallery-all
 //= require magnific-popup
 //= require bootstrap-sprockets
+//= require bootstrap-datepicker
 //= require jquery.collagePlus.min
 //= require jquery.collageCaption.min
 //= require jquery.removeWhitespace.min
+//= require cocoon
 //= require zeroclipboard
 //= require nprogress
 //= require nprogress-turbolinks
@@ -73,7 +75,5 @@ $(window).load(function() {
       var url = $("#" + event.target.id).data('file-url');
       event.clipboardData.setData('text/plain', url);
     });
-
-
   });
 });

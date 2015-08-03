@@ -1,0 +1,14 @@
+= simple_form_for @profile do |f|
+  section.Collage.effect-parent.gallery
+    = link_to @profile.photo.url, id: "gallery"
+      = image_tag(@profile.photo.url)
+  = f.file_field :photo
+  = f.input :name
+  = f.input :birthday, as: :string, input_html: { class: 'datepicker', value: @profile.birthday.strftime("%d/%m/%Y"), 'data-provide' => 'datepicker' }
+  h3 Адреси
+  #addresses
+    = f.simple_fields_for :addresses do |a|
+      = render 'address_fields', f: a
+    .links
+      = link_to_add_association 'add address', f, :addresses
+  = f.submit 'Оновити профіль'

@@ -1,16 +1,24 @@
 /*
  *= require transitions
  *= require blueimp-gallery-all
- *= require mediaelementplayer
  *= require magnific-popup
  *= require styles
  *= require nprogress
  *= require nprogress-bootstrap
- *= require bootstrap-tokenfield
  *= require dropzone/dropzone
+ *= require bootstrap-datepicker3
  *= require_tree .
  *= require_self
  */
+
+main {
+  margin-top: 0px;
+  padding-bottom: 0px;
+}
+
+.navbar {
+  margin-bottom: 0px;
+}
 
 html.turbolinks-progress-bar::before {
   background-color: red !important;
@@ -29,7 +37,6 @@ html.turbolinks-progress-bar::before {
     border:6px solid #FFF;
   }
 }
-
 
 .Image_Wrapper {
   opacity:0;
@@ -54,8 +61,4 @@ html.turbolinks-progress-bar::before {
   padding-right: 7px;
   padding-bottom: 20px;
   padding-left: 7px;
-}
-
-div#pop-up {
-  display: none;
 }
