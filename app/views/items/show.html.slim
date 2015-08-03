@@ -1,18 +1,6 @@
-section.Collage.effect-parent
-  .Image_Wrapper data-caption="<div class='text-center'><h1>#{@item.name}</h1><br>
-    <a href='#{download_items_path(id: @item.token, user_id: @item.user_id)}' id='download_link', class='btn btn-default btn-lg'>
+section.Collage.effect-parent.gallery
+  .Image_Wrapper data-caption="<div class='text-center'>#{@item.name}<br>
+    <a href='#{download_items_path(id: @item.token, user_id: @item.user_id)}' id='download_link', class='btn btn-default'>
     <span class='glyphicon glyphicon-download-alt'> Завантажити</span></a>
     </div>"
-    .gallery
-      - if content_verification(@item.file) == 1
-        = link_to @item.file.url, id: "gallery"
-          = image_tag @item.file.url, alt: "#{@item.name}"
-      - if content_verification(@item.file) == 2
-        = link_to @item.file.url, class: "mfp-iframe", id: "gallery"
-          = image_tag "audio.png", alt: "#{@item.name}"
-      - if content_verification(@item.file) == 3
-        = link_to @item.file.url, class: "mfp-iframe", id: "gallery"
-          = image_tag "video.png", alt: "#{@item.name}"
-      - if content_verification(@item.file) == 0
-        = link_to "", id: "gallery"
-          = image_tag "docs.png", alt: "#{@item.name}"
+    = check_render_file(@item)

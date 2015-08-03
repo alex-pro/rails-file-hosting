@@ -15,16 +15,5 @@ section.Collage.effect-parent.gallery
       <a href='#{item_download_my_path(i.id)}' class='btn btn-default btn-xs'><span class='glyphicon glyphicon-download-alt'></span></a>
       <a href='#{item_path(i.id)}' data-method='delete' class='btn btn-default btn-xs'><span class='glyphicon glyphicon-trash'></span></a>
       </div>"
-      - if content_verification(i.file) == 1
-        = link_to i.file.url, id: "gallery"
-          = image_tag i.file.url, alt: "#{i.name}"
-      - if content_verification(i.file) == 2
-        = link_to i.file.url, class: "mfp-iframe", id: "gallery"
-          = image_tag "audio.png", alt: "#{i.name}"
-      - if content_verification(i.file) == 3
-        = link_to i.file.url, class: "mfp-iframe", id: "gallery"
-          = image_tag "video.png", alt: "#{i.name}"
-      - if content_verification(i.file) == 0
-        = link_to "", id: "gallery"
-          = image_tag "docs.png", alt: "#{i.name}"
+      = check_render_file(i)
 = paginate @items

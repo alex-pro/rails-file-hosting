@@ -3,17 +3,18 @@ class ItemsController < ApplicationController
   before_filter :get_item, only: [:show, :download]
 
   def index
-    @folders = current_user.folders.where('parent_id IS NULL')
-    @items = if params[:search].blank?
-               Item.where('folder_id IS NULL').page(1).per(20)
-             else
-               @search = Item.search do
-                 fulltext params[:search]
-                 paginate page: params[:page], per_page: 20
-                 order_by(:created_at, :desc)
-               end
-               @items = @search.results
-             end
+    if params[:search].blank?
+      @folders = current_user.folders.where('parent_id IS NULL')
+      @items = current_user.items.where('folder_id IS NULL').page(1).per(20)
+    else
+      @folders = []
+      @search = Item.search do
+        fulltext params[:search]
+        paginate page: params[:page], per_page: 20
+        order_by(:created_at, :desc)
+      end
+      @items = @search.results
+    end
   end
 
   def create
@@ -28,28 +29,18 @@ class ItemsController < ApplicationController
       flash[:notice] = "Файл(и) успішно завантажені"
       render nothing: true
     else
-      render 'new'
-    end
-  end
-
-  def edit
-    @item = current_user.items.find_by(id: params[:id])
-  end
-
-  def update
-    @item = current_user.items.find_by(id: params[:id])
-    if @item.update(params_item)
-      flash[:success] = "File updated"
-    else
-      render 'edit'
+      flash[:error] = "Сталася помилка"
+      render nothing: true
     end
   end
 
   def destroy
     item = current_user.items.find_by(id: params[:id])
-    item.destroy! if item
-    flash[:notice] = 'Файл успішно видалений'
-    redirect_to root_path
+    if item
+      item.destroy
+      flash[:notice] = 'Файл успішно видалений'
+    end
+    redirect_to :back
   end
 
   def download
@@ -69,7 +60,7 @@ class ItemsController < ApplicationController
 
   def get_item
     user = User.find_by(id: params[:user_id])
-    @item = user.items.find_by(token: params[:id])
+    @item = user.items.find_by(token: params[:id]) if user
     redirect_to root_path unless user && @item
   end
 end
