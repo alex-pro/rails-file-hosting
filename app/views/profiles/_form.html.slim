@@ -10,5 +10,5 @@
     = f.simple_fields_for :addresses do |a|
       = render 'address_fields', f: a
     .links
-      = link_to_add_association 'add address', f, :addresses
-  = f.submit 'Оновити профіль'
+      = link_to_add_association 'add address', f, :addresses, class: "profile btn btn-primary"
+  = f.submit 'Оновити профіль', class: "btn btn-success"
