@@ -3,17 +3,11 @@ class ItemsController < ApplicationController
   before_filter :get_item, only: [:show, :download]
 
   def index
-    if params[:search].blank?
-      @folders = current_user.folders.where('parent_id IS NULL')
+    @folders = current_user.folders.where('parent_id IS NULL')
+    if params[:q].blank?
       @items = current_user.items.where('folder_id IS NULL').page(1).per(20)
     else
-      @folders = []
-      @search = Item.search do
-        fulltext params[:search]
-        paginate page: params[:page], per_page: 20
-        order_by(:created_at, :desc)
-      end
-      @items = @search.results
+      @items = Item.search params[:q]
     end
   end
 
@@ -36,11 +30,11 @@ class ItemsController < ApplicationController
 
   def destroy
     item = current_user.items.find_by(id: params[:id])
-    if item
-      item.destroy
-      flash[:notice] = 'Файл успішно видалений'
+    if item.destroy
+      respond_to do |format|
+        format.js { flash[:notice] = 'Файл успішно видалений' }
+      end
     end
-    redirect_to :back
   end
 
   def download

@@ -24,14 +24,14 @@ ActiveRecord::Schema.define(version: 20150730142000) do
   end
 
   create_table "folders", force: :cascade do |t|
-    t.text     "name",       limit: 65535
     t.integer  "user_id",    limit: 4
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.integer  "parent_id",  limit: 4
   end
 
-  add_index "folders", ["user_id"], name: "fk_rails_130d1ba9d1", using: :btree
+  add_index "folders", ["user_id"], name: "index_folders_on_user_id", using: :btree
 
   create_table "items", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -62,5 +62,4 @@ ActiveRecord::Schema.define(version: 20150730142000) do
     t.datetime "updated_at",                  null: false
   end
 
-  add_foreign_key "folders", "users"
 end

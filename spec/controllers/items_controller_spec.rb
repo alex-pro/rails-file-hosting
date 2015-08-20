@@ -1,18 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe ItemsController, type: :controller do
-  include SolrSpecHelper
-
-  before(:all) do
-    solr_setup
-  end
-
   after(:all) do
     Item.remove_all_from_index!
   end
 
   describe 'GET index' do
-    context 'user sign in without search params' do
+    context 'user sign in' do
       context 'folder parent id is nil' do
         let(:user) { create(:user) }
         let!(:parent) { create(:folder, user: user) }
@@ -37,40 +31,6 @@ RSpec.describe ItemsController, type: :controller do
         before do
           login(user)
           get :index
-        end
-
-        it { expect(assigns(:items)).to include(item) }
-        it { expect(assigns(:folders).count).to eq(1) }
-        it { expect(response).to render_template("index") }
-      end
-    end
-
-    context 'user sign in with search params' do
-      context 'folder parent id is nil' do
-        let(:user) { create(:user) }
-        let!(:parent) { create(:folder, user: user) }
-        let!(:item) { create(:item, user: user) }
-
-        before do
-          login(user)
-          get :index, search: item.name
-          Sunspot.commit
-        end
-
-        #it { expect(assigns(:items)).to include(item) }
-        #it { expect(assigns(:folders)).to include(parent) }
-        it { expect(response).to render_template("index") }
-      end
-
-      context 'folder parent id is not nil' do
-        let(:user) { create(:user) }
-        let!(:parent) { create(:folder, user: user) }
-        let!(:children) { create(:folder, user: user, parent: parent) }
-        let!(:item) { create(:item, user: user) }
-
-        before do
-          login(user)
-          get :index, search: ''
         end
 
         it { expect(assigns(:items)).to include(item) }
