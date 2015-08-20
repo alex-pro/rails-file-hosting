@@ -5,7 +5,7 @@ RSpec.describe ApplicationHelper, :type => :helper do
 
   describe "check_render_file" do
     context 'image' do
-      let(:tag) { "<a id=\"gallery\" href=\"/uploads/item/file/#{item.id}/image.jpeg\"><img alt=\"image.jpeg\" src=\"/uploads/item/file/1/image.jpeg\" /></a>" }
+      let(:tag) { "<a id=\"gallery\" href=\"/uploads/item/file/#{item.id}/image.jpeg\"><img alt=\"image.jpeg\" src=\"/uploads/item/file/#{item.id}/image.jpeg\" /></a>" }
       before { item.file.stub(:content_type).and_return('image') }
 
       it { expect(helper.check_render_file(item)).to eq(tag) }

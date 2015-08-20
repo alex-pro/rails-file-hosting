@@ -14,7 +14,7 @@ module ApplicationHelper
       end
     else
       link_to "", id: "gallery" do
-        image_tag "docs.png", alt: "#{i.name}"
+        image_tag "doc.png", alt: "#{i.name}"
       end
     end
   end
