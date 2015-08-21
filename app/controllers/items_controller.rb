@@ -4,10 +4,11 @@ class ItemsController < ApplicationController
 
   def index
     @folders = current_user.folders.where('parent_id IS NULL')
-    if params[:q].blank?
+    if params[:search].blank?
       @items = current_user.items.where('folder_id IS NULL').page(1).per(20)
     else
-      @items = Item.search params[:q]
+      items_index = ItemSearchService.new(params[:search])
+      @items = items_index.search.per(4).page(params[:page]).only(:id).load
     end
   end
 

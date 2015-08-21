@@ -8,34 +8,69 @@ RSpec.describe ItemsController, type: :controller do
   describe 'GET index' do
     context 'user sign in' do
       context 'folder parent id is nil' do
-        let(:user) { create(:user) }
-        let!(:parent) { create(:folder, user: user) }
-        let!(:item) { create(:item, user: user) }
+        context 'without search' do
+          let(:user) { create(:user) }
+          let!(:parent) { create(:folder, user: user) }
+          let!(:item) { create(:item, user: user) }
 
-        before do
-          login(user)
-          get :index
+          before do
+            login(user)
+            get :index
+          end
+
+          it { expect(assigns(:items)).to include(item) }
+          it { expect(assigns(:folders)).to include(parent) }
+          it { expect(response).to render_template("index") }
         end
 
-        it { expect(assigns(:items)).to include(item) }
-        it { expect(assigns(:folders)).to include(parent) }
-        it { expect(response).to render_template("index") }
+        context 'with search' do
+          let(:user) { create(:user) }
+          let!(:parent) { create(:folder, user: user) }
+          let!(:item) { create(:item, user: user) }
+
+          before do
+            login(user)
+            get :index, search: item.name
+          end
+
+          it { expect(assigns(:items)).to include(item) }
+          it { expect(assigns(:folders)).to include(parent) }
+          it { expect(response).to render_template("index") }
+        end
       end
 
       context 'folder parent id is not nil' do
-        let(:user) { create(:user) }
-        let!(:parent) { create(:folder, user: user) }
-        let!(:children) { create(:folder, user: user, parent: parent) }
-        let!(:item) { create(:item, user: user) }
+        context 'without search' do
+          let(:user) { create(:user) }
+          let!(:parent) { create(:folder, user: user) }
+          let!(:children) { create(:folder, user: user, parent: parent) }
+          let!(:item) { create(:item, user: user) }
 
-        before do
-          login(user)
-          get :index
+          before do
+            login(user)
+            get :index
+          end
+
+          it { expect(assigns(:items)).to include(item) }
+          it { expect(assigns(:folders).count).to eq(1) }
+          it { expect(response).to render_template("index") }
         end
 
-        it { expect(assigns(:items)).to include(item) }
-        it { expect(assigns(:folders).count).to eq(1) }
-        it { expect(response).to render_template("index") }
+        context 'with search' do
+          let(:user) { create(:user) }
+          let!(:parent) { create(:folder, user: user) }
+          let!(:children) { create(:folder, user: user, parent: parent) }
+          let!(:item) { create(:item, user: user) }
+
+          before do
+            login(user)
+            get :index, search: item.name
+          end
+
+          it { expect(assigns(:items)).to include(item) }
+          it { expect(assigns(:folders).count).to eq(1) }
+          it { expect(response).to render_template("index") }
+        end
       end
     end
 
@@ -116,23 +151,11 @@ RSpec.describe ItemsController, type: :controller do
         before do
           login(user)
           request.env["HTTP_REFERER"] = 'http://test.host/'
-          delete :destroy, id: item.id
+          delete :destroy, format: :js, id: item.id
         end
 
         it { expect(Item.count).to eq(0) }
-        it { expect(response).to redirect_to(:back) }
-      end
-
-      context 'item was not found' do
-        let(:item) { create(:item, user: nil) }
-
-        before do
-          login(user)
-          request.env["HTTP_REFERER"] = 'http://test.host/'
-          delete :destroy, id: item.id
-        end
-
-        it { expect(response).to redirect_to(:back) }
+        it { expect(flash[:notice]).to eq('Файл успішно видалений') }
       end
     end
 
