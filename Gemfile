@@ -9,6 +9,7 @@ gem 'nprogress-rails'
 gem 'zeroclipboard-rails'
 gem 'pjax_rails'
 gem "rack-pjax"
+gem 'chewy'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'high_voltage'
@@ -28,12 +29,9 @@ gem 'autoprefixer-rails'
 gem 'twitter-typeahead-rails'
 
 gem "cocoon"
-gem 'sunspot_rails'
-gem 'sunspot_solr'
 gem 'progress_bar'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
-gem "sunspot_with_kaminari", '~> 0.2.0'
 
 group :development do
   gem 'better_errors'

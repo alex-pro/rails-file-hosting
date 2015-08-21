@@ -1,15 +1,11 @@
 class Item < ActiveRecord::Base
+  update_index 'items#item', :self
+
   mount_uploader :file, FileUploader
   validates :file, presence: true
   belongs_to :user
   belongs_to :folder
-
   before_create :generate_token, :set_name
-
-  searchable do
-    text :name
-    time :created_at
-  end
 
   def image?
     check_file('image')
