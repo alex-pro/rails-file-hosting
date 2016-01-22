@@ -11,7 +11,7 @@ gem 'pjax_rails'
 gem "rack-pjax"
 gem 'chewy'
 gem 'x-editable-rails'
-
+gem 'travis'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'high_voltage'
 gem 'mysql2'
