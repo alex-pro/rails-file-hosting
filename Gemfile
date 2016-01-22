@@ -10,6 +10,7 @@ gem 'zeroclipboard-rails'
 gem 'pjax_rails'
 gem "rack-pjax"
 gem 'chewy'
+gem 'x-editable-rails'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'high_voltage'

@@ -1,0 +1,16 @@
+# More informations you can find here: https://github.com/werein/x-editable-rails
+class_options:
+  Folder:
+    name: asdasd
+    enabled:
+      type: select
+      source:
+        - Active
+        - Disabled
+  User:
+    email:
+      type: email
+    password:
+      type: password
+    mailing_lists:
+      type: select

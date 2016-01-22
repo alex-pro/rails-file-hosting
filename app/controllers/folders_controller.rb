@@ -1,4 +1,6 @@
 class FoldersController < ApplicationController
+  respond_to :html, :json
+
   def create
     current_user.folders.create(name: "Нова тека", parent_id: params[:parent_id])
     redirect_to :back
@@ -6,6 +8,10 @@ class FoldersController < ApplicationController
 
   def show
     @folder = current_user.folders.find_by(id: params[:id])
+  end
+
+  def edit
+    respond_with @folder
   end
 
   def update

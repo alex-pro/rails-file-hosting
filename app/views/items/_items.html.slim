@@ -1,6 +1,6 @@
 section.Collage.effect-parent.gallery
   - @folders.each do |folder|
-    .Image_Wrapper id="folder_#{folder.id}" data-caption="<div class='text-center'>#{folder.name}<br>
+    .Image_Wrapper id="folder_#{folder.id}" data-caption="<div class='editable text-center'>#{folder.name}<br>
       <a href='#' data-target='#mySmallModal' data-toggle='modal' class='edit-folder-name btn btn-default btn-xs'
       data-folder-name=#{folder.name} data-folder-id=#{folder.id}>
       <span class='glyphicon glyphicon-pencil'></span></a>
@@ -9,7 +9,7 @@ section.Collage.effect-parent.gallery
       = link_to folder_path(folder.id)
         = image_tag 'folder.png', alt: "#{folder.name}"
   - @items.each do |i|
-    .Image_Wrapper id="item_#{i.id}" data-caption="<div class='text-center'>#{i.name}<br>
+    .Image_Wrapper id="item_#{i.id}" data-caption="<div class='editable text-center'>#{i.name}<br>
       <a href='javascript:' id='d_clip_#{i.id}' type='button' class='d_clip btn btn-default btn-xs' data-file-url='#{user_item_url(i.token, user_id: i.user_id)}'><span class='glyphicon glyphicon-share-alt'></span></a>
       <a href='#{item_download_my_path(i.id)}' class='btn btn-default btn-xs'><span class='glyphicon glyphicon-download-alt'></span></a>
       <a href='#{item_path(i.id)}' data-item-id='#{i.id}' data-method='delete' class='btn btn-default btn-xs item_destroy' data-remote='true'><span class='glyphicon glyphicon-trash'></span></a>

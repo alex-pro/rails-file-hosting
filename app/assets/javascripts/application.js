@@ -9,6 +9,7 @@
 //= require jquery.collageCaption.min
 //= require jquery.removeWhitespace.min
 //= require cocoon
+//= require bootstrap-editable
 //= require zeroclipboard
 //= require nprogress
 //= require dropzone
