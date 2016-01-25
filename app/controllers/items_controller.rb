@@ -1,4 +1,5 @@
 class ItemsController < ApplicationController
+  respond_to :html, :json
   skip_before_filter :authenticate, only: [:show, :download]
   before_filter :get_item, only: [:show, :download]
 
@@ -10,6 +11,7 @@ class ItemsController < ApplicationController
       items_index = ItemSearchService.new(params[:search])
       @items = items_index.search.per(4).page(params[:page]).only(:id).load
     end
+    respond_with @folders
   end
 
   def create

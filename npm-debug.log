@@ -1,0 +1,190 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node',
+1 verbose cli   '/usr/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   '-g',
+1 verbose cli   'generator-travis-ci' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.37
+4 verbose node symlink /usr/bin/node
+5 verbose cache add [ 'generator-travis-ci', null ]
+6 verbose cache add name=undefined spec="generator-travis-ci" args=["generator-travis-ci",null]
+7 verbose parsed url { protocol: null,
+7 verbose parsed url   slashes: null,
+7 verbose parsed url   auth: null,
+7 verbose parsed url   host: null,
+7 verbose parsed url   port: null,
+7 verbose parsed url   hostname: null,
+7 verbose parsed url   hash: null,
+7 verbose parsed url   search: null,
+7 verbose parsed url   query: null,
+7 verbose parsed url   pathname: 'generator-travis-ci',
+7 verbose parsed url   path: 'generator-travis-ci',
+7 verbose parsed url   href: 'generator-travis-ci' }
+8 silly lockFile 068ec108-generator-travis-ci generator-travis-ci
+9 verbose lock generator-travis-ci /home/samsung/.npm/068ec108-generator-travis-ci.lock
+10 silly lockFile 068ec108-generator-travis-ci generator-travis-ci
+11 silly lockFile 068ec108-generator-travis-ci generator-travis-ci
+12 verbose addNamed [ 'generator-travis-ci', '' ]
+13 verbose addNamed [ null, '*' ]
+14 silly lockFile 58b1d9c1-generator-travis-ci generator-travis-ci@
+15 verbose lock generator-travis-ci@ /home/samsung/.npm/58b1d9c1-generator-travis-ci.lock
+16 silly addNameRange { name: 'generator-travis-ci', range: '*', hasData: false }
+17 verbose request where is /generator-travis-ci
+18 verbose request registry https://registry.npmjs.org/
+19 verbose request id 4d861ad277e13696
+20 verbose url raw /generator-travis-ci
+21 verbose url resolving [ 'https://registry.npmjs.org/', './generator-travis-ci' ]
+22 verbose url resolved https://registry.npmjs.org/generator-travis-ci
+23 verbose request where is https://registry.npmjs.org/generator-travis-ci
+24 info trying registry request attempt 1 at 22:57:48
+25 http GET https://registry.npmjs.org/generator-travis-ci
+26 http 200 https://registry.npmjs.org/generator-travis-ci
+27 silly registry.get cb [ 200,
+27 silly registry.get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+27 silly registry.get     etag: '"ADBO8NNWUPF3Z5B6JWW3215Q2"',
+27 silly registry.get     'content-type': 'application/json',
+27 silly registry.get     'cache-control': 'max-age=300',
+27 silly registry.get     'content-length': '63333',
+27 silly registry.get     'accept-ranges': 'bytes',
+27 silly registry.get     date: 'Fri, 22 Jan 2016 20:57:49 GMT',
+27 silly registry.get     via: '1.1 varnish',
+27 silly registry.get     age: '0',
+27 silly registry.get     connection: 'keep-alive',
+27 silly registry.get     'x-served-by': 'cache-ams4143-AMS',
+27 silly registry.get     'x-cache': 'MISS',
+27 silly registry.get     'x-cache-hits': '0',
+27 silly registry.get     'x-timer': 'S1453496269.584302,VS0,VE287',
+27 silly registry.get     vary: 'Accept' } ]
+28 silly addNameRange number 2 { name: 'generator-travis-ci', range: '*', hasData: true }
+29 silly addNameRange versions [ 'generator-travis-ci',
+29 silly addNameRange   [ '0.1.0',
+29 silly addNameRange     '0.2.0',
+29 silly addNameRange     '0.2.1',
+29 silly addNameRange     '0.2.2',
+29 silly addNameRange     '0.2.3',
+29 silly addNameRange     '0.2.4',
+29 silly addNameRange     '0.2.5',
+29 silly addNameRange     '0.2.7',
+29 silly addNameRange     '0.3.1',
+29 silly addNameRange     '0.4.0',
+29 silly addNameRange     '0.4.1',
+29 silly addNameRange     '0.5.1',
+29 silly addNameRange     '0.5.2',
+29 silly addNameRange     '0.6.0',
+29 silly addNameRange     '0.6.1',
+29 silly addNameRange     '0.6.3',
+29 silly addNameRange     '0.6.4',
+29 silly addNameRange     '0.6.5',
+29 silly addNameRange     '0.6.6' ] ]
+30 verbose addNamed [ 'generator-travis-ci', '0.6.6' ]
+31 verbose addNamed [ '0.6.6', '0.6.6' ]
+32 silly lockFile 473f0e20-generator-travis-ci-0-6-6 generator-travis-ci@0.6.6
+33 verbose lock generator-travis-ci@0.6.6 /home/samsung/.npm/473f0e20-generator-travis-ci-0-6-6.lock
+34 silly lockFile 7bd9879e-ci-generator-travis-ci-0-6-6-tgz https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz
+35 verbose lock https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz /home/samsung/.npm/7bd9879e-ci-generator-travis-ci-0-6-6-tgz.lock
+36 verbose addRemoteTarball [ 'https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz',
+36 verbose addRemoteTarball   '71825e2c2f20184e6ce10c958e571a840c661b4e' ]
+37 info retry fetch attempt 1 at 22:57:50
+38 verbose fetch to= /tmp/npm-31168-fecwxVJD/registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz
+39 http GET https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz
+40 http 200 https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz
+41 silly lockFile 7bd9879e-ci-generator-travis-ci-0-6-6-tgz https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz
+42 silly lockFile 7bd9879e-ci-generator-travis-ci-0-6-6-tgz https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz
+43 silly lockFile 473f0e20-generator-travis-ci-0-6-6 generator-travis-ci@0.6.6
+44 silly lockFile 473f0e20-generator-travis-ci-0-6-6 generator-travis-ci@0.6.6
+45 silly lockFile 58b1d9c1-generator-travis-ci generator-travis-ci@
+46 silly lockFile 58b1d9c1-generator-travis-ci generator-travis-ci@
+47 silly resolved [ { name: 'generator-travis-ci',
+47 silly resolved     version: '0.6.6',
+47 silly resolved     description: 'Yeoman generator that sets up travis-ci to do automated github pages deployment on every commit.',
+47 silly resolved     repository:
+47 silly resolved      { type: 'git',
+47 silly resolved        url: 'git://github.com/pwmckenna/generator-travis-ci.git' },
+47 silly resolved     scripts: { test: './node_modules/grunt-cli/bin/grunt' },
+47 silly resolved     keywords:
+47 silly resolved      [ 'yeoman-generator',
+47 silly resolved        'yeoman',
+47 silly resolved        'generator',
+47 silly resolved        'travis-ci',
+47 silly resolved        'travis',
+47 silly resolved        'github',
+47 silly resolved        'gh-pages' ],
+47 silly resolved     author: { name: 'Patrick Williams', email: 'pwmckenna@gmail.com' },
+47 silly resolved     license: 'BSD',
+47 silly resolved     readmeFilename: 'README.md',
+47 silly resolved     main: '',
+47 silly resolved     bin: '',
+47 silly resolved     homepage: 'https://github.com/pwmckenna/generator-travis-ci',
+47 silly resolved     bugs: { url: 'https://github.com/pwmckenna/generator-travis-ci/issues' },
+47 silly resolved     dependencies:
+47 silly resolved      { 'yeoman-generator': '~0.13.4',
+47 silly resolved        q: '~0.8.12',
+47 silly resolved        request: '~2.14.0',
+47 silly resolved        github: '~0.1.12',
+47 silly resolved        open: '0.0.3',
+47 silly resolved        lodash: '~1.0.1',
+47 silly resolved        ursa: '~0.8.0',
+47 silly resolved        'git-tools': '0.0.3',
+47 silly resolved        'travis-ci': '~1.2.0',
+47 silly resolved        chalk: '~0.3.0' },
+47 silly resolved     devDependencies:
+47 silly resolved      { grunt: '~0.4.2',
+47 silly resolved        'grunt-cli': '~0.1.11',
+47 silly resolved        'grunt-env': '~0.4.0',
+47 silly resolved        'grunt-contrib-jshint': '~0.7.2',
+47 silly resolved        'grunt-mocha-test': '~0.7.0',
+47 silly resolved        mocha: '~1.14.0',
+47 silly resolved        matchdep: '~0.3.0' },
+47 silly resolved     peerDependencies: { yo: '>=1.0.0-rc.1.1' },
+47 silly resolved     engines: { node: '>=0.8.0' },
+47 silly resolved     readme: '# generator-travis-ci\n\n[Yeoman](http://yeoman.io) [generator](https://github.com/yeoman/generator) that provides travis-ci setup options for yeoman projects.\n__`yo travis-ci:gh-pages`__ is an automated alternative to https://github.com/yeoman/yeoman/wiki/Deployment.\n\n## Installation\n\n__`npm install -g generator-travis-ci`__\n\n## Requirements\n\n####Yeoman\n\nBeta version 1.0 and hopefully all future versions.\n\n####GitHub\nTravis is deeply integrated with github, and in order to set all the travis hooks for you, this generator must be run on project hosted on github. Your git remotes should looks something like this:\n\n__`git remote -v`__\n> origin  git@github.com:pwmckenna/generator-travis-ci.git (fetch)\n> origin  git@github.com:pwmckenna/generator-travis-ci.git (push)\n\n## Sub-Generators:\n\n#### default generator\n\n> Sets up travis-ci.org to track your project and creates a basic .travis.yml that runs `grunt` on each commit.\n\n> You can then display your projects build/test status in your README or elsewhere like below:\n\n> [![Build Status](https://travis-ci.org/pwmckenna/generator-travis-ci.png?branch=master)](https://travis-ci.org/pwmckenna/generator-travis-ci)\n\nUsage: __`yo travis-ci`__\n\n#### gh-pages generator\n\n> Aims to make yeoman sites work similar to jekyll sites on github pages. Commit the raw files into master and what is served via gh-pages is `grunt build` output. For [user & organization pages](https://help.github.com/articles/user-organization-and-project-pages#user--organization-pages), you specify the branch you\'d like to develop in, and the output is pushed to master.\n\n> Creates a *.travis.yml* file that tells travis-ci to build the yeoman project in your master branch after every commit and push the built site into your project\'s *gh-pages* branch.\n\nUsage: __`yo travis-ci:gh-pages`__\n\n#### suggestions?\n\nIf you have suggestions for common yeoman/grunt testing/deployment tasks that could be handled best by a continuous integration service, make a pull request or shoot me a message!\n\n## Contribute\n\nSee the [contributing docs](https://github.com/yeoman/yeoman/blob/master/contributing.md)\n\n\n## License\n\n[BSD license](http://opensource.org/licenses/bsd-license.php)\n',
+47 silly resolved     _id: 'generator-travis-ci@0.6.6',
+47 silly resolved     dist:
+47 silly resolved      { shasum: '71825e2c2f20184e6ce10c958e571a840c661b4e',
+47 silly resolved        tarball: 'http://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz' },
+47 silly resolved     _from: 'generator-travis-ci@',
+47 silly resolved     _npmVersion: '1.2.32',
+47 silly resolved     _npmUser: { name: 'pwmckenna', email: 'pwmckenna@gmail.com' },
+47 silly resolved     maintainers: [ [Object] ],
+47 silly resolved     directories: {},
+47 silly resolved     _shasum: '71825e2c2f20184e6ce10c958e571a840c661b4e',
+47 silly resolved     _resolved: 'https://registry.npmjs.org/generator-travis-ci/-/generator-travis-ci-0.6.6.tgz' } ]
+48 info install generator-travis-ci@0.6.6 into /usr/lib
+49 info installOne generator-travis-ci@0.6.6
+50 verbose lib/node_modules/generator-travis-ci unbuild
+51 verbose tar unpack /home/samsung/.npm/generator-travis-ci/0.6.6/package.tgz
+52 silly lockFile dc62f9b4-node-modules-generator-travis-ci tar:///usr/lib/node_modules/generator-travis-ci
+53 verbose lock tar:///usr/lib/node_modules/generator-travis-ci /home/samsung/.npm/dc62f9b4-node-modules-generator-travis-ci.lock
+54 silly lockFile 8c28ff33-ator-travis-ci-0-6-6-package-tgz tar:///home/samsung/.npm/generator-travis-ci/0.6.6/package.tgz
+55 verbose lock tar:///home/samsung/.npm/generator-travis-ci/0.6.6/package.tgz /home/samsung/.npm/8c28ff33-ator-travis-ci-0-6-6-package-tgz.lock
+56 silly gunzTarPerm modes [ '755', '644' ]
+57 error Error: EACCES, mkdir '/usr/lib/node_modules/generator-travis-ci'
+57 error  { [Error: EACCES, mkdir '/usr/lib/node_modules/generator-travis-ci']
+57 error   errno: 3,
+57 error   code: 'EACCES',
+57 error   path: '/usr/lib/node_modules/generator-travis-ci',
+57 error   fstream_type: 'Directory',
+57 error   fstream_path: '/usr/lib/node_modules/generator-travis-ci',
+57 error   fstream_class: 'DirWriter',
+57 error   fstream_stack:
+57 error    [ '/usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23',
+57 error      '/usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53',
+57 error      'Object.oncomplete (fs.js:108:15)' ] }
+58 error Please try running this command again as root/Administrator.
+59 error System Linux 3.16.0-38-generic
+60 error command "/usr/bin/node" "/usr/bin/npm" "install" "-g" "generator-travis-ci"
+61 error cwd /home/samsung/local work/collage
+62 error node -v v0.10.37
+63 error npm -v 1.4.28
+64 error path /usr/lib/node_modules/generator-travis-ci
+65 error fstream_path /usr/lib/node_modules/generator-travis-ci
+66 error fstream_type Directory
+67 error fstream_class DirWriter
+68 error code EACCES
+69 error errno 3
+70 error stack Error: EACCES, mkdir '/usr/lib/node_modules/generator-travis-ci'
+71 error fstream_stack /usr/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:36:23
+71 error fstream_stack /usr/lib/node_modules/npm/node_modules/mkdirp/index.js:46:53
+71 error fstream_stack Object.oncomplete (fs.js:108:15)
+72 verbose exit [ 3, true ]
