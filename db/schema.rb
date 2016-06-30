@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -13,32 +12,31 @@
 
 ActiveRecord::Schema.define(version: 20150702091553) do
 
-  create_table "folders", force: :cascade do |t|
+  create_table "folders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
     t.text     "name",       limit: 65535
-    t.integer  "user_id",    limit: 4
+    t.integer  "user_id"
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
-    t.integer  "parent_id",  limit: 4
+    t.integer  "parent_id"
+    t.index ["user_id"], name: "fk_rails_130d1ba9d1", using: :btree
   end
 
-  add_index "folders", ["user_id"], name: "fk_rails_130d1ba9d1", using: :btree
-
-  create_table "items", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4
-    t.string   "file",       limit: 255
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
-    t.string   "token",      limit: 255
-    t.string   "name",       limit: 255
-    t.string   "icon",       limit: 255
-    t.integer  "folder_id",  limit: 4
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.integer  "user_id"
+    t.string   "file"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "token"
+    t.string   "name"
+    t.string   "icon"
+    t.integer  "folder_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string   "email",           limit: 255
-    t.string   "password_digest", limit: 255
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci" do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_foreign_key "folders", "users"
