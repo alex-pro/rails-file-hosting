@@ -6,7 +6,6 @@ Write in terminal:
 - cd rails-file-hosting
 - bundle install
 - bundle exec rake db:create db:migrate
-- bundle exec rake sunspot:solr:start
 - rails s
 
 Open in your browser [localhost:3000](http://localhost:3000/).
