@@ -5,11 +5,6 @@ class Item < ActiveRecord::Base
 
   before_create :generate_token, :set_name
 
-  searchable do
-    text :name
-    time :created_at
-  end
-
   private
 
   def generate_token

@@ -134,8 +134,8 @@ GEM
       pkg-config (~> 1.1.7)
     nprogress-rails (0.1.6.7)
     options (2.3.2)
+    pg (0.18.4)
     pkg-config (1.1.7)
-    pr_geohash (1.0.0)
     progress_bar (1.0.5)
       highline (~> 1.6)
       options (~> 2.3.0)
@@ -177,8 +177,6 @@ GEM
     ref (2.0.0)
     responders (2.2.0)
       railties (>= 4.2.0, < 5.1)
-    rsolr (1.1.1)
-      builder (>= 2.1.2)
     rspec-core (3.4.4)
       rspec-support (~> 3.4.0)
     rspec-expectations (3.4.0)
@@ -229,18 +227,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sunspot (2.2.5)
-      pr_geohash (~> 1.0)
-      rsolr (~> 1.1.1)
-    sunspot_rails (2.2.5)
-      nokogiri
-      rails (>= 3)
-      sunspot (= 2.2.5)
-    sunspot_solr (2.2.5)
-    sunspot_with_kaminari (0.2.0)
-      kaminari (>= 0.14.0)
-      sunspot
-      sunspot_rails
     temple (0.7.7)
     therubyracer (0.12.2)
       libv8 (~> 3.16.14.0)
@@ -294,6 +280,7 @@ DEPENDENCIES
   magnific-popup-rails
   mysql2
   nprogress-rails
+  pg
   progress_bar
   pry
   quiet_assets
@@ -306,9 +293,6 @@ DEPENDENCIES
   simple_form
   slim-rails
   spring-commands-rspec
-  sunspot_rails
-  sunspot_solr
-  sunspot_with_kaminari
   therubyracer
   thin
   turbolinks

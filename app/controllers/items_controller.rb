@@ -4,16 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @folders = current_user.folders.where('parent_id IS NULL')
-    @items = if params[:search].blank?
-               Item.where('folder_id IS NULL').page(1).per(20)
-             else
-               @search = Item.search do
-                 fulltext params[:search]
-                 paginate page: params[:page], per_page: 20
-                 order_by(:created_at, :desc)
-               end
-               @items = @search.results
-             end
+    @items = Item.where('folder_id IS NULL').page(1).per(20)
   end
 
   def create

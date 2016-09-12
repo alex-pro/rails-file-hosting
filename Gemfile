@@ -26,12 +26,13 @@ gem 'blueimp-gallery'
 gem 'autoprefixer-rails'
 gem 'twitter-typeahead-rails'
 
-gem 'sunspot_rails'
-gem 'sunspot_solr'
 gem 'progress_bar'
 gem 'kaminari'
 gem 'bootstrap-kaminari-views'
-gem 'sunspot_with_kaminari'
+
+group :production do
+  gem 'pg'
+end
 
 group :development do
   gem 'pry'
