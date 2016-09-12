@@ -13,3 +13,10 @@ development:
 test:
   <<: *default
   database: collage_test
+
+production:
+  adapter: postgresql
+  database: collage_production
+  username: postgres
+  pool: 5
+  timeout: 5000
